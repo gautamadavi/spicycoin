@@ -1,2 +1,2 @@
 # spicycoin
-SpicyCoin App source coide
+SpicyCoin App source code
