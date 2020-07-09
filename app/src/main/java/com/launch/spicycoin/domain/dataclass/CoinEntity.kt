@@ -1,4 +1,4 @@
-package com.coinpaprika.apiclient.entity
+package com.launch.spicycoin.domain.dataclass
 
 import com.google.gson.annotations.SerializedName
 
