@@ -1,4 +1,4 @@
-package com.launch.spicycoin.ui.dashboard
+package com.launch.spicycoin.application.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
