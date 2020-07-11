@@ -1,8 +1,9 @@
-package com.coinpaprika.apiclient.entity
+package com.launch.spicycoin.domain.dataclass
 
+import com.coinpaprika.apiclient.entity.*
 import com.google.gson.annotations.SerializedName
 
-data class CoinDetailsEntity(
+open class CoinDetailsEntity(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
     @SerializedName("symbol") val symbol: String,

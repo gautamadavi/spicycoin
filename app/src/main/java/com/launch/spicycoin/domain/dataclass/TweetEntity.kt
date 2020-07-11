@@ -2,11 +2,11 @@
  * Created by Piotr Kostecki on 13.12.18 10:35
  */
 
-package com.coinpaprika.apiclient.entity
+package com.launch.spicycoin.domain.dataclass
 
 import com.google.gson.annotations.SerializedName
 
-data class TweetEntity(val date: String,
+open class TweetEntity(val date: String,
                        @SerializedName("user_name") val userName: String,
                        @SerializedName("user_image_link") val imageLink: String,
                        val status: String,

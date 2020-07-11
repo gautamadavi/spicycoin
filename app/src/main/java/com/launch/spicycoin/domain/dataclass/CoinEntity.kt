@@ -2,7 +2,7 @@ package com.launch.spicycoin.domain.dataclass
 
 import com.google.gson.annotations.SerializedName
 
-data class CoinEntity(
+open class CoinEntity(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
     @SerializedName("symbol") val symbol: String,

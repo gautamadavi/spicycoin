@@ -1,24 +1,29 @@
 package com.launch.spicycoin.domain.apicalls.coin
 
-import com.coinpaprika.apiclient.entity.CoinDetailsEntity
-import com.coinpaprika.apiclient.entity.TweetEntity
+import com.launch.spicycoin.domain.dataclass.CoinDetailsEntity
+import com.launch.spicycoin.domain.dataclass.TweetEntity
 import com.launch.spicycoin.domain.apicalls.ApiFactory
+
+import com.launch.spicycoin.domain.apicalls.safeCall
 import com.launch.spicycoin.domain.dataclass.CoinEntity
-import io.reactivex.rxjava3.core.Single
+import com.launch.spicycoin.domain.dataclass.OHLCVEntity
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.Response
 
-class CoinCalls(val apiFactory: ApiFactory) :
+class CoinCalls(private var retrofit: CoinCallsInterface = ApiFactory().init().create(CoinCallsInterface::class.java)) :
     CoinCallsInterface {
 
-    private var retrofit = apiFactory.init().create(CoinCallsInterface::class.java)
 
-    override suspend fun coins(): Response<List<CoinEntity>> =
-        retrofit.coins()
+    override fun coins(): Observable<Response<List<CoinEntity>>> =
+        safeCall { retrofit.coins() }
 
+    override fun coin(coin_id: String): Observable<Response<CoinDetailsEntity>> =
+        safeCall { retrofit.coin(coin_id) }
 
-    override suspend fun coin(coin_id: String): Single<Response<CoinDetailsEntity>> =
-        retrofit.coin(coin_id)
+    override fun coinTweets(coin_id: String): Observable<Response<List<TweetEntity>>> =
+        safeCall {  retrofit.coinTweets(coin_id) }
 
-    override fun coinTweets(coin_id: String): Response<List<TweetEntity>> =
-        retrofit.coinTweets(coin_id)
+    override fun coinOHLCV(coin_id: String): Observable<Response<OHLCVEntity>> =
+       safeCall { retrofit.coinOHLCV(coin_id) }
+
 }

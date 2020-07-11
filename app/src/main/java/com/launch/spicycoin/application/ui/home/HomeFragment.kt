@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.launch.spicycoin.R
-import com.launch.spicycoin.application.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 

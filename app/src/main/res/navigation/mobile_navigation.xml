@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.launch.spicycoin.ui.notifications.NotificationsFragment"
+        android:name="com.launch.spicycoin.application.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
