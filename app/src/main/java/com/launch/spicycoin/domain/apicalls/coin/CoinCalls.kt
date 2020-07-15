@@ -1,18 +1,18 @@
 package com.launch.spicycoin.domain.apicalls.coin
 
+import com.launch.spicycoin.application.CoinModule
 import com.launch.spicycoin.domain.dataclass.CoinDetailsEntity
 import com.launch.spicycoin.domain.dataclass.TweetEntity
-import com.launch.spicycoin.domain.apicalls.ApiFactory
 
 import com.launch.spicycoin.domain.apicalls.safeCall
 import com.launch.spicycoin.domain.dataclass.CoinEntity
 import com.launch.spicycoin.domain.dataclass.OHLCVEntity
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.Response
+import javax.inject.Inject
 
-class CoinCalls(private var retrofit: CoinCallsInterface = ApiFactory().init().create(CoinCallsInterface::class.java)) :
+class CoinCalls @Inject constructor( @CoinModule.CoinRetrofitClient private var retrofit: CoinCallsInterface) :
     CoinCallsInterface {
-
 
     override fun coins(): Observable<Response<List<CoinEntity>>> =
         safeCall { retrofit.coins() }
