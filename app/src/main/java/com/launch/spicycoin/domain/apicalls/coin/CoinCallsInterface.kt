@@ -4,10 +4,13 @@ import com.launch.spicycoin.domain.dataclass.CoinDetailsEntity
 import com.launch.spicycoin.domain.dataclass.TweetEntity
 import com.launch.spicycoin.domain.dataclass.CoinEntity
 import com.launch.spicycoin.domain.dataclass.OHLCVEntity
+import dagger.Binds
+import dagger.Provides
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+
 
 interface CoinCallsInterface {
 

@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.launch.spicycoin.ui.home.HomeFragment"
+        android:name="com.launch.spicycoin.application.ui.hotlist.HotListFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.launch.spicycoin.ui.dashboard.DashboardFragment"
+        android:name="com.launch.spicycoin.application.ui.home.NewsFragment"
         android:label="@string/title_watchlist"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_hot_list" />
 
     <fragment
         android:id="@+id/navigation_notifications"
